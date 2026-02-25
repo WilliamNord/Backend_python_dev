@@ -27,14 +27,14 @@ For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **
    pip install -r requirements.txt
    ```
 
-4. lag nøkkelen
+3. lag nøkkelen
    du kan bruke den ferdiglagde filen "lag_nokkel.py" for i lage din private Fernet nøkkel.
    ```python
    python lag_nokkel.py
    ```
    Nøkkelen du får, skal du sette inn i .env-filen som du lagde tideligere.
 
-5. Hvordan bruke mariaDB
+4. Hvordan bruke mariaDB
    aller først må du installere mariaBD
    macOS:
    ```bash
@@ -57,7 +57,7 @@ For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **
    CREATE USER 'brukernavn'@'localhost' IDENTIFIED BY 'sikker_passord';
    ```
 
-6. Lag databasen
+5. Lag databasen
    dette prosjektet bruker mariaDB som database og koden er laget rundt dette.
    ```SQL
    CREATE DATABASE <database-navn>;
@@ -89,7 +89,7 @@ For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **
    ```
 
    
-7. koble sammen database
+6. koble sammen database
    for å kunne la python lese og inserte ting i _din_ database, må du skrive in brukeren sit brukernavn og passord
    du må kopiere inn dette og fylle inn din informasjon, den vil til slutt se slik ut:
    ```python
@@ -102,7 +102,7 @@ For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **
    ```
    disse variablene blir lest av python når du kjører prosjektet lokalt med egener verdier.
    
-8. kjør appen
+7. kjør appen
    når du har laget din egen database og koblet den sammen med python og flask, kan du kjøre appen med denne komandoen:
    ```python
    python app.py
