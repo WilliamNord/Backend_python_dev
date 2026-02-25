@@ -107,8 +107,27 @@ For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **
    DB_NAME=backend_db
    ```
    disse variablene blir lest av python når du kjører prosjektet lokalt med egener verdier.
+
+
    
 7. kjør appen
+   Når du har fulgt denne guiden burde filene dine se slik ut:
+   Backend_python_dev/
+│
+├── app.py              # Flask-applikasjonen
+├── db.py               # Databasekobling
+├── security.py         # Kryptering og dekryptering (Fernet)
+├── lag_nokkel.py       # Genererer ny Fernet-nøkkel
+├── requirements.txt    # Python-avhengigheter
+├── .env                # Miljøvariabler (skal ikke pushes til GitHub)
+├── .gitignore
+│
+├── templates/          # HTML-filer
+│   ├── secrets.html
+│   └── dekryptert.html
+│
+└── venv/               # Virtuelt miljø (skal ikke pushes til GitHub)
+
    når du har laget din egen database og koblet den sammen med python og flask, kan du kjøre appen med denne komandoen:
    ```python
    python app.py
