@@ -9,14 +9,32 @@ For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **
   den skal eventuelt se ut som dette:
   FERNET_KEY=<din-egen-tilfeldige-32-byte-base64-nøkkel>
 
-2. lag nøkkelen
+2. Lag en venv fil
+   for å lage et virituelt miljø kan du bruke disse kommandoene:
+   ```python
+   python -m venv venv
+   ```
+   macOS og Linux:
+   ```python
+   source venv/bin/activate
+   ```
+   windows:
+   ```python
+   venv\Scripts\activate
+   ```
+   installer alle nødvendige pakker for å kjøre prosjektet.
+   ```python
+   pip install -r requirements.txt
+   ```
+
+4. lag nøkkelen
    du kan bruke den ferdiglagde filen "lag_nokkel.py" for i lage din private Fernet nøkkel.
    ```python
    python lag_nokkel.py
    ```
    Nøkkelen du får, skal du sette inn i .env-filen som du lagde tideligere.
 
-3. Hvordan bruke mariaDB
+5. Hvordan bruke mariaDB
    aller først må du installere mariaBD
    macOS:
    ```bash
@@ -39,7 +57,7 @@ For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **
    CREATE USER 'brukernavn'@'localhost' IDENTIFIED BY 'sikker_passord';
    ```
 
-4. Lag databasen
+6. Lag databasen
    dette prosjektet bruker mariaDB som database og koden er laget rundt dette.
    ```SQL
    CREATE DATABASE <database-navn>;
@@ -71,7 +89,7 @@ For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **
    ```
 
    
-5. koble sammen database
+7. koble sammen database
    for å kunne la python lese og inserte ting i _din_ database, må du skrive in brukeren sit brukernavn og passord
    du må kopiere inn dette og fylle inn din informasjon, den vil til slutt se slik ut:
    ```python
@@ -84,7 +102,7 @@ For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **
    ```
    disse variablene blir lest av python når du kjører prosjektet lokalt med egener verdier.
    
-6. kjør appen
+8. kjør appen
    når du har laget din egen database og koblet den sammen med python og flask, kan du kjøre appen med denne komandoen:
    ```python
    python app.py
