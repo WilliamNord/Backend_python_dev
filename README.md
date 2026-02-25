@@ -114,19 +114,18 @@ For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **
    Når du har fulgt denne guiden burde filene dine se slik ut:
    ```bash
    Backend_python_dev/
+     static/
+     templates/
+     venv/
+   
+     .gitattributes
+     .gitignore
+     README.md
      app.py
      db.py
-     security.py
      lag_nokkel.py
      requirements.txt
-     .gitignore
-     .env              # skal ikke pushes til GitHub
-   
-     templates/
-       secrets.html
-       dekryptert.html
-   
-     venv/             # skal ikke pushes til GitHub
+     security.py
    ```
 
    når du har laget din egen database og koblet den sammen med python og flask, kan du kjøre appen med denne komandoen:
