@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block tittel %}Dekryptert{% endblock %}
+
+{% block innhold %}
+
+<h1>Dekrypterte meldinger</h1>
+
+<ul>
+    {% for row in rows %}
+        <li>{{ row[1] }} ({{ row[2] }})</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
