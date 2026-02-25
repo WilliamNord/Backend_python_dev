@@ -1,7 +1,9 @@
 from cryptography.fernet import Fernet
 import os
+from dotenv import load_dotenv
 
-key = b'Z_iFTXZ67d-zapz-_0_kj9Pmhc8DM41KNgwqm8V9MCI='
+load_dotenv()  # Leser .env-filen
+key = os.getenv("FERNET_KEY").encode()
 cipher = Fernet(key)
 
 def encrypt(text):
