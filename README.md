@@ -4,10 +4,10 @@ Dette er en Flask-app som krypterer data med Fernet og lagrer det i MariaDB.
 For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **skal ikke deles**.
 
 ## Teknologi
-Python 3
-Flask
-cryptography (Fernet)
-MariaDB
+- Python 3
+- Flask
+- cryptography (Fernet)
+- MariaDB
 
 ## Oppsett
 
