@@ -18,12 +18,12 @@ For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **
 
 3. Hvordan bruke mariaDB
    aller først må du installere mariaBD
-   mac:
+   macOS:
    ```bash
    brew install mariadb
    brew services start mariadb
    ```
-   linux:
+   Linux (Debian/Ubuntu):
    ```bash
    sudo apt update
    sudo apt install mariadb-server
@@ -35,7 +35,7 @@ For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **
    sudo mariadb -u root
    ```
    lag en ny bruker for prosjektet:
-   ```bash
+   ```SQL
    CREATE USER 'brukernavn'@'localhost' IDENTIFIED BY 'sikker_passord';
    ```
 
@@ -52,21 +52,21 @@ For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **
     );
    ```
    når du har laget databasen må du la den nye brukeren din få rettigheter til å redigere den.
-   ```bash
+   ```SQL
    GRANT ALL PRIVILEGES ON <database-navn>.* TO 'brukernavn'@'localhost';
    ```
-   ```bash
+   ```SQL
    FLUSH PRIVILEGES;
    ```
    dette er et eksempel på hvordan denne prosessen kan se ut som:
-   ```bash
+   ```SQL
    CREATE USER 'cool-user'@'localhost' IDENTIFIED BY 'Web2026!';
    GRANT ALL PRIVILEGES ON cool-database.* TO 'cool-user'@'localhost';
    FLUSH PRIVILEGES;
    ```
 
    etter du har laget en bruker, kan du logge på som dette:
-   ```bash
+   ```SQL
    mariadb -u brukernavn -p
    ```
 
@@ -82,6 +82,7 @@ For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **
    DB_PASSWORD=ditt_passord
    DB_NAME=backend_db
    ```
+   disse variablene blir lest av python når du kjører prosjektet lokalt med egener verdier.
    
 6. kjør appen
    når du har laget din egen database og koblet den sammen med python og flask, kan du kjøre appen med denne komandoen:
