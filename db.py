@@ -1,11 +1,13 @@
+import os
 import mysql.connector
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_db():
-    """Kobler til MariaDB-databasen og returnerer tilkoblingen."""
-    connection = mysql.connector.connect(
-        host="localhost",
-        user="backend-user",
-        password="sterktpassord",
-        database="backend_db"
+    return mysql.connector.connect(
+        host=os.getenv("DB_HOST"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        database=os.getenv("DB_NAME")
     )
-    return connection
