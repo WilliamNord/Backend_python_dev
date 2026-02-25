@@ -6,9 +6,14 @@
     <h1>Velkommen!</h1>
     <p>Dette er om siden til min Flask-app.</p>
 
+    <br>
+
     {% if navn %}
         <p>Hei, {{ navn }}! Hyggelig aa se deg.</p>
     {% else %}
-        <p>Hei, gjest!</p>
+
+    <p>Dette er en nettside som bruker Python og Flask til å kryptere meldinger før de er sendt til en mariaDB database.</p>
+    <p>Med Fernet kryptering, vil det være umulig å dekryptere meldingen som sendes til databasen uten den riktige nøkkelen.</p>
+
     {% endif %}
 {% endblock %}

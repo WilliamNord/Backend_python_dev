@@ -50,9 +50,9 @@ def dekryptert():
     return render_template("dekryptert.html", rows=decrypted_rows)
 
 
-# @app.route("/om")
-# def om_oss():
-#     return render_template("om.html")
+@app.route("/om")
+def om_oss():
+    return render_template("om.html")
 
 # @app.route("/gjestebok")
 # def gjestebok():
