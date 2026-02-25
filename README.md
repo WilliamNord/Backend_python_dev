@@ -128,7 +128,7 @@ For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **
      security.py
    ```
 
-   når du har laget din egen database og koblet den sammen med python og flask, kan du kjøre appen med denne komandoen:
+   når du har laget din egen database og koblet den sammen med python og flask, kan du kjøre appen med denne komandoen i terminalen:
    ```python
    python app.py
    ```
