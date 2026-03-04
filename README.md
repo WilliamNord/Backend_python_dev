@@ -3,13 +3,15 @@
 Dette er en Flask-app som krypterer data med Fernet og lagrer det i MariaDB.  
 For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **skal ikke deles**.
 
+## Teknologi
+- Python 3
+- Flask
+- cryptography (Fernet)
+- MariaDB
+
 ## Oppsett
 
-1. Lag en `.env`-fil i roten av prosjektmappen:
-  den skal eventuelt se ut som dette:
-  FERNET_KEY=<din-egen-tilfeldige-32-byte-base64-nøkkel>
-
-2. Lag en venv fil
+1. Lag en venv fil
    for å lage et virituelt miljø kan du bruke disse kommandoene:
    ```python
    python -m venv venv
@@ -22,17 +24,21 @@ For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **
    ```python
    venv\Scripts\activate
    ```
-   installer alle nødvendige pakker for å kjøre prosjektet.
+   Installer alle nødvendige pakker.
    ```python
    pip install -r requirements.txt
    ```
-
+2. Lag en `.env`-fil i roten av prosjektmappen:
+  den skal eventuelt se ut som dette:
+  FERNET_KEY=<din-egen-tilfeldige-32-byte-base64-nøkkel>
+   
 3. lag nøkkelen
    du kan bruke den ferdiglagde filen "lag_nokkel.py" for i lage din private Fernet nøkkel.
    ```python
    python lag_nokkel.py
    ```
-   Nøkkelen du får, skal du sette inn i .env-filen som du lagde tideligere.
+   Nøkkelen du får, skal du sette inn i .env-filen som du lagede i forje trinn.
+
 
 4. Hvordan bruke mariaDB
    aller først må du installere mariaBD
@@ -90,7 +96,7 @@ For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **
 
    
 6. koble sammen database
-   for å kunne la python lese og inserte ting i _din_ database, må du skrive in brukeren sit brukernavn og passord
+   for å kunne la python lese og inserte ting i _din_ database, må skrive inn din brukers brukernavn og passord.
    du må kopiere inn dette og fylle inn din informasjon, den vil til slutt se slik ut:
    ```python
    FERNET_KEY=<din-genererte-nøkkel>
@@ -101,9 +107,28 @@ For sikkerhet bruker vi en hemmelig Fernet-nøkkel som ligger i `.env`. Denne **
    DB_NAME=backend_db
    ```
    disse variablene blir lest av python når du kjører prosjektet lokalt med egener verdier.
+
+
    
 7. kjør appen
-   når du har laget din egen database og koblet den sammen med python og flask, kan du kjøre appen med denne komandoen:
+   Når du har fulgt denne guiden burde filene dine se slik ut:
+   ```bash
+   Backend_python_dev/
+     static/
+     templates/
+     venv/
+   
+     .gitattributes
+     .gitignore
+     README.md
+     app.py
+     db.py
+     lag_nokkel.py
+     requirements.txt
+     security.py
+   ```
+
+   når du har laget din egen database og koblet den sammen med python og flask, kan du kjøre appen med denne komandoen i terminalen:
    ```python
    python app.py
    ```
