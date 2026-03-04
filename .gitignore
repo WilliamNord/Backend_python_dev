@@ -1,2 +1,6 @@
+#virtualenvironment variables
 .env
 venv/
+
+# Diagrams
+Diagram_python_backend.drawio
